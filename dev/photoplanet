@@ -1,6 +1,6 @@
 upstream django {
 	    # connect to this socket
-	    server unix:///tmp/uwsgi.sock;	# for a file socket
+	    server unix:///home/vagrant/www/photoplanet-1/photoplanet/uwsgi.sock;	# for a file socket
 	    #server 127.0.0.1:8001;	# for a web port socket 
 	    }
  
@@ -8,7 +8,7 @@ upstream django {
 	    # the port your site will be served on
 	    listen      8000;
 	    # the domain name it will serve for
-	    server_name .donetskogram.com;	# substitute your machine's IP address or FQDN
+	    server_name .photoplanet;	# substitute your machine's IP address or FQDN
 	    charset     utf-8;
    
 	    #Max upload size
@@ -20,7 +20,7 @@ upstream django {
 	    #}
    
 		location /static {
-			alias /root/pp/photoplanet-1/photoplanet/static;	# your Django project's static files
+			alias /home/vagrant/www/photoplanet-1/photoplanet/static;	# your Django project's static files
 		}
    
 	    # Finally, send all non-media requests to the Django server.
